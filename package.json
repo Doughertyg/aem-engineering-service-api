@@ -2,9 +2,11 @@
   "name": "aem-engineering-service-api",
   "version": "1.0.0",
   "description": "api that converts numbers into numerals",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "tsx ./index.ts",
+    "build": "tsc",
+    "dev": "tsx watch src/app.ts",
+    "start": "tsx src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,5 +19,8 @@
     "path": "^0.12.7",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "uuid": "^11.0.5"
   }
 }
