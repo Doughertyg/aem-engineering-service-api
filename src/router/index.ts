@@ -3,6 +3,6 @@ import romanNumeralsRouter from './roman-numerals-route';
 
 const router = express.Router();
 
-router.use("/roman-numerals", romanNumeralsRouter);
+router.use('/romannumeral', romanNumeralsRouter);
 
 export default router;

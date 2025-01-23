@@ -14,7 +14,7 @@ export const getRomanNumerals = async (
 
   try {
     // do the thing
-    res.send('IV').status(200); // TODO: change
+    res.send({ input: req.query.query, output: 'IV' }).status(200); // TODO: change
   } catch (err) {
     // handle the error
     next(err);
