@@ -31,7 +31,6 @@ const INTEGER_TO_BASE_ROMAN_NUMERAL_MAP: {
 export const convertNumberToRomanNumeral = (
   inputNumber: string
 ): string => {
-  console.log('the input: ', inputNumber);
   // The input string represents a valid integer from 1 to 3999 but because it is a string a value "3.00000000" would still be valid. We only want the digits to the left of the decimal:
   let integerString = inputNumber.split('.')[0];
 

@@ -7,7 +7,7 @@
     "build": "tsc",
     "dev": "tsx watch src/app.ts",
     "start": "tsx src/app.ts",
-    "test": "jest --testPathPattern=src/test/ --testPathPattern=src/utils/__tests__/ --coverage --forceExit --verbose"
+    "test": "export TEST_SERVER=true && jest --testPathPattern=src/test/ --testPathPattern=src/utils/__tests__/ --coverage --forceExit --verbose --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",

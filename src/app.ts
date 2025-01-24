@@ -10,8 +10,12 @@ app.use(cors());
 app.use(router);
 app.use(errorHandlerMiddleware);
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
-});
+if (process.env.TEST_SERVER && process.env.TEST_SERVER.trim() === 'true') {
+  console.log('Server started to run test cases')
+} else {
+  app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+  });
+}
 
 module.exports = app;
