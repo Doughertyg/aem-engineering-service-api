@@ -7,6 +7,6 @@ export class APIError extends Error {
     this.name = this.constructor.name;
 
     // Set the prototype chain for instanceof checks
-    Object.setPrototypeOf(this, APIError.prototype); 
+    Object.setPrototypeOf(this, APIError.prototype);
   }
 }

@@ -11,7 +11,7 @@ app.use(router);
 app.use(errorHandlerMiddleware);
 
 if (process.env.TEST_SERVER && process.env.TEST_SERVER.trim() === 'true') {
-  console.log('Server started to run test cases')
+  console.log('Server started to run test cases');
 } else {
   app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);

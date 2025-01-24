@@ -3,260 +3,260 @@ const { convertNumberToRomanNumeral } = require('../roman-numerals-util');
 const INTEGERS_AND_VALID_NUMERALS = [
   {
     in: '1',
-    out: 'I'
+    out: 'I',
   },
   {
     in: '3',
-    out: 'III'
+    out: 'III',
   },
   {
     in: '4',
-    out: 'IV'
+    out: 'IV',
   },
   {
     in: '5',
-    out: 'V'
+    out: 'V',
   },
   {
     in: '7',
-    out: 'VII'
+    out: 'VII',
   },
   {
     in: '9',
-    out: 'IX'
+    out: 'IX',
   },
   {
     in: '10',
-    out: 'X'
+    out: 'X',
   },
   {
     in: '12',
-    out: 'XII'
+    out: 'XII',
   },
   {
     in: '14',
-    out: 'XIV'
+    out: 'XIV',
   },
   {
     in: '15',
-    out: 'XV'
+    out: 'XV',
   },
   {
     in: '17',
-    out: 'XVII'
+    out: 'XVII',
   },
   {
     in: '19',
-    out: 'XIX'
+    out: 'XIX',
   },
   {
     in: '20',
-    out: 'XX'
+    out: 'XX',
   },
   {
     in: '23',
-    out: 'XXIII'
+    out: 'XXIII',
   },
   {
     in: '24',
-    out: 'XXIV'
+    out: 'XXIV',
   },
   {
     in: '25',
-    out: 'XXV'
+    out: 'XXV',
   },
   {
     in: '28',
-    out: 'XXVIII'
+    out: 'XXVIII',
   },
   {
     in: '29',
-    out: 'XXIX'
+    out: 'XXIX',
   },
   {
     in: '30',
-    out: 'XXX'
+    out: 'XXX',
   },
   {
     in: '34',
-    out: 'XXXIV'
+    out: 'XXXIV',
   },
   {
     in: '39',
-    out: 'XXXIX'
+    out: 'XXXIX',
   },
   {
     in: '40',
-    out: 'XL'
+    out: 'XL',
   },
   {
     in: '43',
-    out: 'XLIII'
+    out: 'XLIII',
   },
   {
     in: '44',
-    out: 'XLIV'
+    out: 'XLIV',
   },
   {
     in: '49',
-    out: 'XLIX'
+    out: 'XLIX',
   },
   {
     in: '50',
-    out: 'L'
+    out: 'L',
   },
   {
     in: '59',
-    out: 'LIX'
+    out: 'LIX',
   },
   {
     in: '60',
-    out: 'LX'
+    out: 'LX',
   },
   {
     in: '64',
-    out: 'LXIV'
+    out: 'LXIV',
   },
   {
     in: '70',
-    out: 'LXX'
+    out: 'LXX',
   },
   {
     in: '80',
-    out: 'LXXX'
+    out: 'LXXX',
   },
   {
     in: '84',
-    out: 'LXXXIV'
+    out: 'LXXXIV',
   },
   {
     in: '89',
-    out: 'LXXXIX'
+    out: 'LXXXIX',
   },
   {
     in: '90',
-    out: 'XC'
+    out: 'XC',
   },
   {
     in: '99',
-    out: 'XCIX'
+    out: 'XCIX',
   },
   {
     in: '100',
-    out: 'C'
+    out: 'C',
   },
   {
     in: '103',
-    out: 'CIII'
+    out: 'CIII',
   },
   {
     in: '104',
-    out: 'CIV'
+    out: 'CIV',
   },
   {
     in: '109',
-    out: 'CIX'
+    out: 'CIX',
   },
   {
     in: '110',
-    out: 'CX'
+    out: 'CX',
   },
   {
     in: '115',
-    out: 'CXV'
+    out: 'CXV',
   },
   {
     in: '120',
-    out: 'CXX'
+    out: 'CXX',
   },
   {
     in: '123',
-    out: 'CXXIII'
+    out: 'CXXIII',
   },
   {
     in: '129',
-    out: 'CXXIX'
+    out: 'CXXIX',
   },
   {
     in: '154',
-    out: 'CLIV'
+    out: 'CLIV',
   },
   {
     in: '178',
-    out: 'CLXXVIII'
+    out: 'CLXXVIII',
   },
   {
     in: '199',
-    out: 'CXCIX'
+    out: 'CXCIX',
   },
   {
     in: '200',
-    out: 'CC'
+    out: 'CC',
   },
   {
     in: '207',
-    out: 'CCVII'
+    out: 'CCVII',
   },
   {
     in: '242',
-    out: 'CCXLII'
+    out: 'CCXLII',
   },
   {
     in: '299',
-    out: 'CCXCIX'
+    out: 'CCXCIX',
   },
   {
     in: '300',
-    out: 'CCC'
+    out: 'CCC',
   },
   {
     in: '350',
-    out: 'CCCL'
+    out: 'CCCL',
   },
   {
     in: '400',
-    out: 'CD'
+    out: 'CD',
   },
   {
     in: '424',
-    out: 'CDXXIV'
+    out: 'CDXXIV',
   },
   {
     in: '500',
-    out: 'D'
+    out: 'D',
   },
   {
     in: '509',
-    out: 'DIX'
+    out: 'DIX',
   },
   {
     in: '567',
-    out: 'DLXVII'
+    out: 'DLXVII',
   },
   {
     in: '600',
-    out: 'DC'
+    out: 'DC',
   },
   {
     in: '900',
-    out: 'CM'
+    out: 'CM',
   },
   {
     in: '990',
-    out: 'CMXC'
+    out: 'CMXC',
   },
   {
     in: '1000',
-    out: 'M'
+    out: 'M',
   },
   {
     in: '1989',
-    out: 'MCMLXXXIX'
+    out: 'MCMLXXXIX',
   },
   {
     in: '3999',
-    out: 'MMMCMXCIX'
-  }
+    out: 'MMMCMXCIX',
+  },
 ];
 
 test('Test that the convertNumberToRomanNumeral method returns correct roman numerals', () => {
@@ -268,5 +268,7 @@ test('Test that the convertNumberToRomanNumeral method returns correct roman num
 test('Test that the convertNumberToRomanNumeral util method can handle integers with extra zeroes', () => {
   expect(convertNumberToRomanNumeral('3.000')).toEqual('III');
   expect(convertNumberToRomanNumeral('24.0000000')).toEqual('XXIV');
-  expect(convertNumberToRomanNumeral('523.000000000000000000000')).toEqual('DXXIII');
-})
+  expect(convertNumberToRomanNumeral('523.000000000000000000000')).toEqual(
+    'DXXIII',
+  );
+});

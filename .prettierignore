@@ -5,3 +5,5 @@ internals/scripts/
 package-lock.json
 yarn.lock
 package.json
+*.json
+README.md

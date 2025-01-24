@@ -1,6 +1,6 @@
-import { NextFunction, Response, Request } from "express";
-import {v4 as uuidv4 } from 'uuid';
-import { convertNumberToRomanNumeral } from "../utils/roman-numerals-util";
+import { NextFunction, Response, Request } from 'express';
+import { v4 as uuidv4 } from 'uuid';
+import { convertNumberToRomanNumeral } from '../utils/roman-numerals-util';
 
 /**
  * Method that handles requests to the roman numeral endpoint and converts number inputs to roman numerals
@@ -8,7 +8,7 @@ import { convertNumberToRomanNumeral } from "../utils/roman-numerals-util";
 export const getRomanNumerals = async (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   const correlationId = uuidv4();
   const logPrefix = `get_roman_numerals API - correlationId: ${correlationId} inputNumber: ${req.query.query} `;
@@ -19,4 +19,4 @@ export const getRomanNumerals = async (
   } catch (err) {
     next(err);
   }
-}
+};

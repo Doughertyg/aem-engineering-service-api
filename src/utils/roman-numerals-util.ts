@@ -1,5 +1,5 @@
 const INTEGER_TO_BASE_ROMAN_NUMERAL_MAP: {
-  [index: number]: string
+  [index: number]: string;
 } = {
   1: 'I',
   4: 'IV',
@@ -13,8 +13,8 @@ const INTEGER_TO_BASE_ROMAN_NUMERAL_MAP: {
   400: 'CD',
   500: 'D',
   900: 'CM',
-  1000: 'M'
-}
+  1000: 'M',
+};
 
 /**
  * Util fn that converts an integer number into a roman numeral using the standard form: https://en.wikipedia.org/wiki/Roman_numerals
@@ -28,9 +28,7 @@ const INTEGER_TO_BASE_ROMAN_NUMERAL_MAP: {
  * @param string representation of a valid integer between 1 and 3999
  * @returns string representation of the input number as a roman numeral
  */
-export const convertNumberToRomanNumeral = (
-  inputNumber: string
-): string => {
+export const convertNumberToRomanNumeral = (inputNumber: string): string => {
   // The input string represents a valid integer from 1 to 3999 but because it is a string a value "3.00000000" would still be valid. We only want the digits to the left of the decimal:
   let integerString = inputNumber.split('.')[0];
 
@@ -48,14 +46,15 @@ export const convertNumberToRomanNumeral = (
   const baseValue = base * Number(integerString[0]);
 
   if (INTEGER_TO_BASE_ROMAN_NUMERAL_MAP[baseValue]) {
-    return INTEGER_TO_BASE_ROMAN_NUMERAL_MAP[baseValue] + convertNumberToRomanNumeral(String(Number(integerString) - baseValue));
+    return (
+      INTEGER_TO_BASE_ROMAN_NUMERAL_MAP[baseValue] +
+      convertNumberToRomanNumeral(String(Number(integerString) - baseValue))
+    );
   }
 
-  return (
-    baseValue > halfBase
-  ) ? (
-    convertNumberToRomanNumeral(String(Number(integerString) - base)) + INTEGER_TO_BASE_ROMAN_NUMERAL_MAP[base]
-  ) : (
-    INTEGER_TO_BASE_ROMAN_NUMERAL_MAP[base] + convertNumberToRomanNumeral(String(Number(integerString) - base))
-  );
+  return baseValue > halfBase
+    ? convertNumberToRomanNumeral(String(Number(integerString) - base)) +
+        INTEGER_TO_BASE_ROMAN_NUMERAL_MAP[base]
+    : INTEGER_TO_BASE_ROMAN_NUMERAL_MAP[base] +
+        convertNumberToRomanNumeral(String(Number(integerString) - base));
 };
