@@ -14,7 +14,7 @@ export const errorHandlerMiddleware = (
   res: Response,
   nect: NextFunction,
 ) => {
-  logger.error(`Error in the middleware: ${err.message ?? 'Error'}`)
+  logger.error(`Error in the middleware: ${err.message ?? 'Error'}`);
 
   res
     .status(err.statusCode || 500)

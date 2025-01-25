@@ -10,13 +10,13 @@ const createLogger = function createLogger() {
         new transports.Console({
           level: 'info',
           handleExceptions: true,
-        })
+        }),
       ],
-      exitOnError: false
+      exitOnError: false,
     });
   }
 
-  return logger
-}
+  return logger;
+};
 
 export default createLogger;

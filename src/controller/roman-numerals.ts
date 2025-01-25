@@ -23,7 +23,9 @@ export const getRomanNumerals = async (
     logger.profile('get_roman_numerals');
     res.send({ input: req.query.query, output: romanNumeral }).status(200);
   } catch (err: any) {
-    logger.error(`${logPrefix} Call failed with error: ${err.message ?? 'Error'}`)
+    logger.error(
+      `${logPrefix} Call failed with error: ${err.message ?? 'Error'}`,
+    );
     next(err);
   }
 };
