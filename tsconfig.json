@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es2016",
+    "module": "Preserve",
+    "moduleDetection": "force",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "src/test"]
+}

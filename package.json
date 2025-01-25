@@ -1,0 +1,32 @@
+{
+  "name": "aem-engineering-service-api",
+  "version": "1.0.0",
+  "description": "api that converts numbers into numerals",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/app.ts",
+    "start": "tsx src/app.ts",
+    "pretty": "prettier . -w",
+    "test": "export TEST_SERVER=true && jest --testPathPattern=src/test/ --testPathPattern=src/utils/__tests__/ --coverage --forceExit --verbose --detectOpenHandles"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "jest": "^29.7.0",
+    "path": "^0.12.7",
+    "prettier": "^3.4.2",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "uuid": "^11.0.5"
+  }
+}
