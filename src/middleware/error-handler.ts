@@ -1,6 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import { APIError } from '../utils/custom-error';
 import { ERROR_MESSAGES } from '../utils/error-messages';
+import createLogger from '../utils/logger';
+
+const logger = createLogger();
 
 /**
  * Middleware for handling errors in the server
@@ -11,7 +14,7 @@ export const errorHandlerMiddleware = (
   res: Response,
   nect: NextFunction,
 ) => {
-  // log the error
+  logger.error(`Error in the middleware: ${err.message ?? 'Error'}`)
 
   res
     .status(err.statusCode || 500)
